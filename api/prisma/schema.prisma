@@ -15,3 +15,20 @@ datasource db {
 }
 
 // TODO: add your models below (for example, a Game and its Answers).
+
+model Game {
+  id Int  @id @default(autoincrement())
+  roomcode String
+  answer String
+  answers Answers[]
+}
+
+model Answers {
+  id Int @id @default(autoincrement())
+  answer String
+  username String
+  gameId Int
+  game Game @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  @@unique([gameId, answer])
+}
