@@ -27,7 +27,7 @@ app.listen(PORT, () => {
 
 app.get("/", (req, res) => {
   res.send("Hello World");
-  console.log("Hello World") // Working //
+  console.log("Hello World") 
 })
 
 app.post("/game", (req, res) => {
