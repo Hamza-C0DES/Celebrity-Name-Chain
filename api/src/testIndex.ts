@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express from "express";
-const prisma = require("./prisma");
+
 const app = express();
 app.use(express.json());
 
@@ -21,22 +21,11 @@ app.get("/health", (_req, res) => {
 // See this API's README ("Using Prisma in code") for the exact db.ts snippet.
 
 app.listen(PORT, () => {
-  console.log("Server Live!")
   console.log(`API listening on http://localhost:${PORT}`);
 });
 
-app.get("/games", async (req, res)=>{
-  //dont have a db yet, or a schema
-  //const games = await prisma.game.findMany()
-});
-
-app.get("/", (req, res) => {
-  res.send("Hello World");
-  console.log("Hello World") 
-})
-
-app.post("/game", (req, res) => {
-    const {roomCode, username, celebrity} = req.body;
-    console.log(roomCode, username, celebrity);
-    res.status(201).json({roomCode, username, celebrity});
+app.post("/game/", (req, res) => {
+    const {roomCode, celebrity} = req.body;
+    console.log(roomCode, celebrity);
+    res.status(201).json({roomCode, celebrity});
 })
