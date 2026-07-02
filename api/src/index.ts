@@ -21,8 +21,15 @@ app.get("/health", (_req, res) => {
 // See this API's README ("Using Prisma in code") for the exact db.ts snippet.
 
 app.listen(PORT, () => {
+  console.log("Server Live!")
   console.log(`API listening on http://localhost:${PORT}`);
 });
+
+app.get("/", (req, res) => {
+  // Not Loading Anything //
+  res.send("Hello World");
+  console.log("Hello World") // Working //
+})
 
 app.post("/game", (req, res) => {
     const {roomCode, username, answer} = req.body;
