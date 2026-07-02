@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/game", (req, res) => {
-    const {roomCode, username, answer} = req.body;
-    console.log(roomCode, username, answer);
-    res.status(201).json({roomCode, username, answer});
+    const {roomCode, username, celebrity} = req.body;
+    console.log(roomCode, username, celebrity);
+    res.status(201).json({roomCode, username, celebrity});
 })
