@@ -10,11 +10,28 @@ import {
 import { useForm } from "react-hook-form";
 //import GameForm from './components/GameForm';
 
-const Home: React.FC = () => {
-  const { register, handleSubmit, reset} = useForm();
-  const onSubmit = (data: any) =>{
-    console.log(data)
+//object for recording user input
+// let user ={
+//   username: "",
+//   celebAnswer: "",
+//   roomCode:""
+// }
 
+const Home: React.FC = () => {
+  const { register, handleSubmit,reset, formState:{errors} } = useForm({
+    defaultValues:{
+      roomCode:'1',
+      userName: "johndoe",
+      celebName: "johndoe"
+    }
+  }
+  );
+  const onSubmit = (data: any) =>{
+    console.log(data);
+    reset({
+
+    });
+    return(data);
   };
   
   return (
@@ -28,7 +45,7 @@ const Home: React.FC = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <IonInput 
           label="Room Code" 
-          {...register("roomCode", {required: true})}
+          {...register("roomCode", {required: "Please enter a room c"})}
           type='number'
           fill='outline'
           />
