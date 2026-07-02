@@ -19,16 +19,16 @@ datasource db {
 model Game {
   id Int  @id @default(autoincrement())
   roomcode String
-  answer String
-  answers Answers[]
+  celebrity String
+  celebrities Answers[]
 }
 
 model Answers {
   id Int @id @default(autoincrement())
-  answer String
+  celebrity String
   username String
   gameId Int
   game Game @relation(fields: [gameId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
-  @@unique([gameId, answer])
+  @@unique([gameId, celebrity])
 }
