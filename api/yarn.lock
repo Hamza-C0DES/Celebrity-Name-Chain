@@ -798,25 +798,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "celebrity-name-chain-api@workspace:."
   dependencies:
-    "@prisma/adapter-pg": "npm:^7.8.0"
-    "@prisma/client": "npm:^7.0.0"
-    "@types/cors": "npm:^2"
-    "@types/express": "npm:^4.17.21"
-    "@types/node": "npm:^22.10.0"
-    "@types/pg": "npm:^8.20.0"
-    cors: "npm:^2.8.6"
-    dotenv: "npm:^17.4.2"
-    express: "npm:^4.21.2"
-    pg: "npm:^8.22.0"
-    prisma: "npm:^7.8.0"
-    tsx: "npm:^4.19.2"
-    typescript: "npm:^5.7.2"
-  languageName: unknown
-  linkType: soft
+    "@kurkle/color" "^0.3.0"
 
-"chart.js@npm:4.5.1":
-  version: 4.5.1
-  resolution: "chart.js@npm:4.5.1"
+chokidar@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/chokidar/-/chokidar-5.0.0.tgz"
+  integrity sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==
   dependencies:
     "@kurkle/color": "npm:^0.3.0"
   checksum: 10c0/3f2a11dcaae9079e8e6b8ad077e2ae311f04996f9da14815730891e66215ee8b5f2c0eb70b5a156e5bde0f89a41bae13506dc6153e50fd22dcb282b21eec706f
@@ -1840,21 +1827,17 @@ __metadata:
   version: 1.2.0
   resolution: "postgres-interval@npm:1.2.0"
   dependencies:
-    xtend: "npm:^4.0.0"
-  checksum: 10c0/c1734c3cb79e7f22579af0b268a463b1fa1d084e742a02a7a290c4f041e349456f3bee3b4ee0bb3f226828597f7b76deb615c1b857db9a742c45520100456272
-  languageName: node
-  linkType: hard
+    xtend "^4.0.0"
 
-"postgres@npm:3.4.7":
-  version: 3.4.7
-  resolution: "postgres@npm:3.4.7"
-  checksum: 10c0/b2e61b1064d38e7e1df8291f6d5a7e11f892a3240e00cf2b5e5542bf9abbfe97f3963164aeb56b42c1ab6b8aae3454c57f5bbc1791df0769375542740a7cde72
-  languageName: node
-  linkType: hard
+postgres@3.4.7:
+  version "3.4.7"
+  resolved "https://registry.npmjs.org/postgres/-/postgres-3.4.7.tgz"
+  integrity sha512-Jtc2612XINuBjIl/QTWsV5UvE8UHuNblcO3vVADSrKsrc6RqGX6lOW1cEo3CM2v0XG4Nat8nI+YM7/f26VxXLw==
 
-"prisma@npm:^7.8.0":
-  version: 7.8.0
-  resolution: "prisma@npm:7.8.0"
+prisma@*, prisma@^7.0.0:
+  version "7.8.0"
+  resolved "https://registry.npmjs.org/prisma/-/prisma-7.8.0.tgz"
+  integrity sha512-yfN4yrw7HV9kEJhoy1+jgah0jafEIQsf7uWouSsM8MvJtlubsk+kM7AIBWZ8+GJl74Yj3c+nbYqBkMOxtsZ3Lw==
   dependencies:
     "@prisma/config": "npm:7.8.0"
     "@prisma/dev": "npm:0.24.3"
@@ -2171,22 +2154,14 @@ __metadata:
   version: 0.2.17
   resolution: "tinyglobby@npm:0.2.17"
   dependencies:
-    fdir: "npm:^6.5.0"
-    picomatch: "npm:^4.0.4"
-  checksum: 10c0/7f7bb0f197c88bc4b20c231e0deca4240ca3bf313a88f5a7fee93a872b84966a4d50220947c0455ad07a60b3b360961c5b7fd979222aeb716a9f99b412002e4c
-  languageName: node
-  linkType: hard
+    esbuild "~0.28.0"
+  optionalDependencies:
+    fsevents "~2.3.3"
 
-"toidentifier@npm:~1.0.1":
-  version: 1.0.1
-  resolution: "toidentifier@npm:1.0.1"
-  checksum: 10c0/93937279934bd66cc3270016dd8d0afec14fb7c94a05c72dc57321f8bd1fa97e5bea6d1f7c89e728d077ca31ea125b78320a616a6c6cd0e6b9cb94cb864381c1
-  languageName: node
-  linkType: hard
-
-"tsx@npm:^4.19.2":
-  version: 4.22.4
-  resolution: "tsx@npm:4.22.4"
+type-is@~1.6.18:
+  version "1.6.18"
+  resolved "https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz"
+  integrity sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
   dependencies:
     esbuild: "npm:~0.28.0"
     fsevents: "npm:~2.3.3"
