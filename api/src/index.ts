@@ -59,4 +59,10 @@ app.post("/submit", async (req, res) => { // async allows us to use await for no
       where: { roomCode }, // essentially selecting where the roomCode matches //
       orderBy: { createdAt: 'desc' }, // order will be going from latest to oldest //
     }); 
+    if (lastEntry) { // using an if condition to validate the input by the client //
+      const lastName = lastEntry.celebrity.trim().split(" ").pop()
+      // the lastName variable points to the lastEntry, we take the celebrity value, trim any spaces in the front ... //
+      // and/or back  
+
+    }
 })
