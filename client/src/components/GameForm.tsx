@@ -14,7 +14,7 @@ const GameForm =()=>{
   
   const { register, handleSubmit,reset, formState:{errors}, watch } = useForm({
     defaultValues:{
-      roomCode:roomCode,
+      roomcode:roomCode,
       username: userName,
       celebName: ""
     }
@@ -26,7 +26,7 @@ const GameForm =()=>{
       console.log(roomCode)
       console.log(userName)
       reset({
-        roomCode: roomCode,
+        roomcode: roomCode,
         username: userName,
         celebName: ""
       })
@@ -38,7 +38,7 @@ const GameForm =()=>{
   const mutation = useMutation({
   mutationFn: async (data: any)=>{
 
-      const res = await fetch("http://localhost:3000/submit",{
+      const res = await fetch("http://localhost:3000/answer",{
       method: 'POST',
       headers: {
       'Content-Type': 'application/json'
@@ -57,11 +57,11 @@ const GameForm =()=>{
     <form onSubmit={handleSubmit(onSubmit)}>
           <IonInput 
           label="Room Code:" 
-          {...register("roomCode", {required: "Please enter a room code."})}
+          {...register("roomcode", {required: "Please enter a room code."})}
           type='number'
           fill='outline'
           />
-          <p>{errors.roomCode?.message}</p>
+          <p>{errors.roomcode?.message}</p>
 
           <IonInput 
           label="User:"
