@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express from "express";
-import cors from "express"
+import cors from "cors"
 const app = express();
 
 import { PrismaClient } from './generated/prisma/client.js'; // Having Issues Here* //
@@ -38,12 +38,12 @@ app.get("/games", async (req, res)=>{
   res.json(await prisma.game.findMany());
 });
 
-app.get("/games/:roomcode", async (req, res)=>{
-  const {roomcode} = req.params;
-  res.json(await prisma.game.findUnique({
-    where: { roomcode: roomcode }
-  }))
-})
+// app.get("/games/:roomcode", async (req, res)=>{
+//   const {roomcode} = req.params;
+//   res.json(await prisma.game.findUnique({
+//     where: { roomcode: roomcode }
+//   }))
+// })
 
 app.get("/", (req, res) => {
   res.send("Hello World");
@@ -53,8 +53,8 @@ app.get("/", (req, res) => {
 
 
 app.post("/game", async (req, res) => {
-    const {roomcode, username, celebrity} = req.body;
-    console.log(roomcode, username, celebrity);
+    const {roomcode, celebrity} = req.body;
+    console.log(roomcode, celebrity);
 
     //use prisma to insert into the db
     if(!roomcode || !celebrity){
@@ -69,15 +69,15 @@ app.post("/game", async (req, res) => {
 
       }};
       const game = await prisma.game.create(argument)
+      return res.status(201).json({roomcode, celebrity});
     } catch (error:any) {
       console.error(error);
 
       if (error.code === "P2002") {
       return res.status(409).json({ error: "Room code already exists" });
       }
-      res.status(500).json({ error: "Could not create game" });
+      return res.status(500).json({ error: "Could not create game" });
     }
-    res.status(201).json({roomcode, username, celebrity});
 })
 
 app.post("/answer", async (req, res) => {
@@ -107,15 +107,15 @@ app.post("/answer", async (req, res) => {
 
       //query prisma in here to insert into the db
       const game = await prisma.game.create(argument)
+      return res.status(201).json({roomcode, username, celebrity});
     } catch (error:any) {
       console.error(error);
 
       if (error.code === "P2002") {
       return res.status(409).json({ error: "Room code already exists" });
       }
-      res.status(500).json({ error: "Could not create game" });
+      return res.status(500).json({ error: "Could not create game" });
     }
-    res.status(201).json({roomcode, username, celebrity});
 })
 
 
